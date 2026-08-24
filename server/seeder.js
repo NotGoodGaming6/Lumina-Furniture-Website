@@ -2,6 +2,10 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const path = require('path');
+const dns = require('dns');
+
+// Fix Windows Node.js querySrv ECONNREFUSED bug
+dns.setServers(['8.8.8.8', '1.1.1.1', '8.8.4.4']);
 
 dotenv.config();
 
@@ -9,8 +13,9 @@ const Product = require('./models/misc/product.model.js');
 const User = require('./models/user/user.model.js');
 
 mongoose.connect(process.env.MONGO_URI, {
-  connectTimeoutMS: 10000,
-  serverSelectionTimeoutMS: 10000,
+  serverSelectionTimeoutMS: 30000,
+  tls: true,
+  tlsAllowInvalidCertificates: false
 });
 
 console.log('Connecting to MongoDB...');

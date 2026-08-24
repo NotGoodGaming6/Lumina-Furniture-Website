@@ -10,6 +10,11 @@ const hpp = require('hpp');
 const { rateLimit } = require('express-rate-limit');
 const socketUtils = require('./utils/socket');
 
+const dns = require('dns');
+try {
+  dns.setServers(['8.8.8.8', '1.1.1.1', '8.8.4.4']);
+} catch (e) {}
+
 dotenv.config();
 
 const authRoutes = require('#routes/user/auth.route.js');
