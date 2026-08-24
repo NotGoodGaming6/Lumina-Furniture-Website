@@ -105,8 +105,13 @@ exports.loginUser = async (req, res, next) => {
 
     sendCredentialResponse(user, 200, res);
   } catch (err) {
-    console.error('Login error:', err);
-    res.status(400).json({ success: false, error: err.message });
+    console.error('Login error:', err.message);
+    const msg = err.message || '';
+    let userMsg = 'Incorrect email or password. Please try again.';
+    if (msg.includes('buffering timed out') || msg.includes('topology was closed')) {
+      userMsg = 'Database connection is temporarily unavailable. Please try again in a few moments.';
+    }
+    res.status(400).json({ success: false, error: userMsg });
   }
 };
 

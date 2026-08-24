@@ -159,13 +159,30 @@ app.use('/api/lumina/upload', uploadRoutes);
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  const response = { success: false, error: err.message || 'Server Error' };
-  if (process.env.NODE_ENV === 'development') {
-    response.stack = err.stack;
+const formatUserFriendlyError = (err) => {
+  const msg = err.message || '';
+  if (msg.includes('buffering timed out') || msg.includes('topology was closed') || msg.includes('ECONNREFUSED')) {
+    return 'Database connection is temporarily unavailable. Please try again in a few moments.';
   }
-  res.status(err.statusCode || 500).json(response);
+  if (msg.includes('duplicate key error') || err.code === 11000) {
+    return 'An account with this information already exists.';
+  }
+  if (msg.includes('Authentication failed') || msg.includes('Invalid credentials')) {
+    return 'Incorrect email or password. Please check your credentials.';
+  }
+  if (msg.includes('jwt expired') || msg.includes('TokenExpiredError')) {
+    return 'Your session has expired. Please log in again.';
+  }
+  return err.message || 'Something went wrong. Please try again.';
+};
+
+app.use((err, req, res, next) => {
+  console.error('[API Error]:', err.message);
+  const friendlyMessage = formatUserFriendlyError(err);
+  res.status(err.statusCode || 500).json({ 
+    success: false, 
+    error: friendlyMessage 
+  });
 });
 
 const PORT = process.env.PORT || 5000;
