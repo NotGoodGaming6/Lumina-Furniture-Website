@@ -54,16 +54,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  res.status(200).json({
-    success: true,
-    message: 'Lumina Furniture API is live and running 🛋️✨',
-    version: '1.0.0',
-    endpoints: {
-      health: '/api/health',
-      products: '/api/lumina/products',
-      auth: '/api/lumina/auth'
-    }
-  });
+  res.send('Lumina API is running...');
 });
 
 app.get('/api/health', (req, res) => {
