@@ -48,6 +48,19 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get('/', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'Lumina Furniture API is live and running 🛋️✨',
+    version: '1.0.0',
+    endpoints: {
+      health: '/api/health',
+      products: '/api/lumina/products',
+      auth: '/api/lumina/auth'
+    }
+  });
+});
+
 app.get('/api/health', (req, res) => {
   const mongoStatus = mongoose.connection.readyState === 1 ? 'connected' : 'disconnected';
   const memory = process.memoryUsage();
