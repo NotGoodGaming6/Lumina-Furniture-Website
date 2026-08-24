@@ -1,0 +1,8 @@
+[
+  {
+    "name": "Admin User",
+    "email": "admin@lumina.com",
+    "password": "password123",
+    "role": "admin"
+  }
+]

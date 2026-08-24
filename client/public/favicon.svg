@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="40%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+    <radialGradient id="ambientGlow" cx="65%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="140" fill="url(#bgGrad)"/>
+  <rect width="512" height="512" rx="140" fill="url(#ambientGlow)"/>
+  <rect x="8" y="8" width="496" height="496" rx="132" stroke="#ffffff" stroke-opacity="0.08" stroke-width="8"/>
+
+  <g filter="url(#subtleShadow)">
+    <path d="M168 128H236V328H344V384H168V128Z" fill="url(#glowGrad)"/>
+  </g>
+
+  <g filter="url(#subtleShadow)">
+    <circle cx="360" cy="156" r="32" fill="url(#goldGrad)"/>
+    <circle cx="360" cy="156" r="48" stroke="url(#goldGrad)" stroke-opacity="0.4" stroke-width="6"/>
+  </g>
+</svg>
