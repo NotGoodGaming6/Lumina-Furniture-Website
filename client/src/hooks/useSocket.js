@@ -11,7 +11,8 @@ export const useSocket = (userId, role) => {
 
     if (userId) {
       if (!socketInstance) {
-        socketInstance = io('http://localhost:5000', {
+        const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'http://localhost:5000';
+        socketInstance = io(SOCKET_URL, {
           reconnection: true,
           reconnectionAttempts: 5,
         });

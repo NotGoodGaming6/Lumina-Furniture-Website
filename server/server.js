@@ -179,12 +179,16 @@ const connectDB = async () => {
     });
     console.log(`MongoDB Connected: ${conn.connection.host}`);
 
-    httpServer.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
-    });
+    if (!process.env.VERCEL) {
+      httpServer.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
+      });
+    }
   } catch (err) {
     console.error(`Error connecting to MongoDB: ${err.message}`);
-    process.exit(1);
+    if (!process.env.VERCEL) {
+      process.exit(1);
+    }
   }
 };
 
@@ -199,3 +203,5 @@ process.on('uncaughtException', (err) => {
 });
 
 connectDB();
+
+module.exports = app;

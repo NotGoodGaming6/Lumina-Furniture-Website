@@ -1,8 +1,10 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { updateAccessToken, logout } from '@/redux/slices/authSlice';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/lumina';
+
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'http://localhost:5000/api/lumina',
+  baseUrl: API_BASE_URL,
   prepareHeaders: (headers, { getState }) => {
     const token = getState().auth.token;
     if (token) {
