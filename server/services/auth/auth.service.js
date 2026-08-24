@@ -164,15 +164,31 @@ class AuthService {
   }
 
   async resetPassword({ email, otp, newPassword }) {
-    const otpSession = await Otp.findOne({ email, otp });
-
-    if (!otpSession) {
-      throw new Error('Invalid or expired OTP code');
+    if (newPassword.length < 6) {
+      throw new Error('Password must be at least 6 characters');
     }
 
-    if (new Date() > otpSession.expiresAt) {
-      await Otp.findByIdAndDelete(otpSession._id);
-      throw new Error('OTP code has expired. Please request a new one.');
+    const otpSessions = await Otp.find({ email }).sort({ createdAt: -1 });
+
+    if (!otpSessions || otpSessions.length === 0) {
+      throw new Error('No active verification request found. Please request a new code.');
+    }
+
+    let validSession = null;
+    for (const session of otpSessions) {
+      if (new Date() > session.expiresAt) {
+        await Otp.findByIdAndDelete(session._id);
+        continue;
+      }
+      const isMatch = await session.matchOtp(otp);
+      if (isMatch) {
+        validSession = session;
+        break;
+      }
+    }
+
+    if (!validSession) {
+      throw new Error('Invalid or expired OTP code. Please check your email.');
     }
 
     const user = await User.findOne({ email });
