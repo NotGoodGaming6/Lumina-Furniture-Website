@@ -21,13 +21,15 @@ export const ForgotPasswordModal = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
+  const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/lumina';
+
   const handleSendOtp = async (e) => {
     e.preventDefault();
     if (!email) return;
 
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:5000/api/lumina/auth/forgot-password', {
+      const res = await fetch(`${API_BASE_URL}/auth/forgot-password`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email })
@@ -38,7 +40,10 @@ export const ForgotPasswordModal = ({ isOpen, onClose }) => {
       toast.success(data.message || 'OTP verification code sent!');
       setStep(2);
     } catch (err) {
-      toast.error(err.message || 'Failed to send OTP code');
+      const errorMsg = err.message === 'Failed to fetch' 
+        ? 'Cannot connect to server. Please check your internet or try again later.'
+        : (err.message || 'Failed to send OTP code');
+      toast.error(errorMsg);
     } finally {
       setLoading(false);
     }
@@ -50,7 +55,7 @@ export const ForgotPasswordModal = ({ isOpen, onClose }) => {
 
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:5000/api/lumina/auth/reset-password', {
+      const res = await fetch(`${API_BASE_URL}/auth/reset-password`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, otp, newPassword })
