@@ -27,7 +27,7 @@ export const CompareDrawer = () => {
               onClick={() => setIsCompareOpen(true)}
               className="glass bg-slate-900/90 dark:bg-white/90 text-white dark:text-slate-900 backdrop-blur-xl py-3 px-6 rounded-full border border-white/20 dark:border-slate-800 shadow-[0_15px_40px_rgba(0,0,0,0.3)] flex items-center space-x-3 text-xs font-mono font-bold uppercase tracking-wider hover:scale-105 transition-all cursor-pointer"
             >
-              <FiLayers className="w-4 h-4 text-amber-400 dark:text-indigo-600" />
+              <FiLayers className="w-4 h-4 text-amber-600 dark:text-amber-400" />
               <span>Compare ({compareItems.length})</span>
             </button>
           </motion.div>
@@ -57,7 +57,7 @@ export const CompareDrawer = () => {
                 <div className="flex items-center justify-between pb-6 border-b border-slate-200 dark:border-white/10">
                   <div>
                     <div className="flex items-center space-x-2">
-                      <FiLayers className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                      <FiLayers className="w-5 h-5 text-slate-900 dark:text-white" />
                       <h3 className="text-xl sm:text-2xl font-serif font-bold tracking-tight">
                         Design Comparison
                       </h3>
@@ -112,7 +112,7 @@ export const CompareDrawer = () => {
                                   {item.name}
                                 </h4>
                               </Link>
-                              <div className="text-sm font-mono font-bold text-indigo-600 dark:text-indigo-400 mt-1">
+                              <div className="text-sm font-mono font-bold text-slate-900 dark:text-white mt-1">
                                 {formatPrice(item.price)}
                               </div>
                               <button

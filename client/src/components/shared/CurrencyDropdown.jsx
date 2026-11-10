@@ -70,7 +70,7 @@ export const CurrencyDropdown = ({ className = '', dropUp = false }) => {
                 >
                   <span>{item.label}</span>
                   {isSelected && (
-                    <FiCheck className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400 shrink-0 ml-1.5" />
+                    <FiCheck className="w-3.5 h-3.5 text-slate-900 dark:text-white shrink-0 ml-1.5" />
                   )}
                 </button>
               );

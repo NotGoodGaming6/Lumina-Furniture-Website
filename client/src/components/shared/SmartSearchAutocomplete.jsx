@@ -72,7 +72,7 @@ export const SmartSearchAutocomplete = ({ isDarkHeader }) => {
           onChange={(e) => setQuery(e.target.value)}
           onFocus={() => setIsFocused(true)}
           placeholder="Search..."
-          className="w-full py-2 pl-9 pr-8 text-sm outline-none transition-all rounded-full bg-white dark:bg-slate-900/90 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 border border-slate-200 dark:border-white/10 focus:border-indigo-500 dark:focus:border-indigo-400 shadow-sm"
+          className="w-full py-2 pl-9 pr-8 text-sm outline-none transition-all rounded-full bg-white dark:bg-slate-900/90 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 border border-slate-200 dark:border-white/10 focus:border-slate-900 dark:focus:border-white shadow-sm"
         />
 
         {query && (
@@ -117,7 +117,7 @@ export const SmartSearchAutocomplete = ({ isDarkHeader }) => {
                       <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-500" />
                     </div>
                     <div className="ml-3 flex-grow min-w-0">
-                      <div className="text-xs font-bold text-indigo-600 dark:text-indigo-400 mb-0.5 truncate">{item.category}</div>
+                      <div className="text-xs font-mono uppercase tracking-wider text-amber-700 dark:text-amber-500 mb-0.5 truncate">{item.category}</div>
                       <div className="text-sm font-bold text-slate-900 dark:text-white truncate">{item.name}</div>
                     </div>
                     <div className="ml-3 flex-shrink-0 flex items-center text-sm font-bold text-slate-900 dark:text-white">
@@ -129,7 +129,7 @@ export const SmartSearchAutocomplete = ({ isDarkHeader }) => {
                 {searchData?.pagination?.total > 5 && (
                   <button 
                     onClick={handleSubmit}
-                    className="flex justify-between items-center w-full px-4 py-3 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-indigo-600 dark:text-indigo-400 text-sm font-bold transition-colors"
+                    className="flex justify-between items-center w-full px-4 py-3 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-xs font-mono uppercase tracking-wider font-bold transition-colors"
                   >
                     View all {searchData.pagination.total} results
                     <FiArrowRight />

@@ -7,7 +7,7 @@ export const NavUserMenu = ({ user, logout }) => {
 
   return (
     <div className="relative group text-sm font-bold flex items-center cursor-pointer">
-      <div className="w-8 h-8 rounded-full bg-brand-500 text-white flex items-center justify-center font-sans shadow-md border-2 border-white/20 transition-transform group-hover:scale-110">
+      <div className="w-8 h-8 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 flex items-center justify-center font-sans shadow-md border-2 border-white/20 transition-opacity group-hover:opacity-90">
         {user.name.charAt(0).toUpperCase()}
       </div>
 
@@ -21,7 +21,7 @@ export const NavUserMenu = ({ user, logout }) => {
           {user.role === 'admin' && (
             <Link
               to="/admin"
-              className="px-4 py-2.5 text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl flex items-center space-x-3 transition-colors"
+              className="px-4 py-2.5 text-slate-700 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl flex items-center space-x-3 transition-colors"
             >
               <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
                 <FiSettings className="h-4 w-4" />
@@ -32,7 +32,7 @@ export const NavUserMenu = ({ user, logout }) => {
 
           <Link
             to="/profile"
-            className="px-4 py-2.5 text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl flex items-center space-x-3 transition-colors"
+            className="px-4 py-2.5 text-slate-700 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl flex items-center space-x-3 transition-colors"
           >
             <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
               <FiUser className="h-4 w-4" />
@@ -42,7 +42,7 @@ export const NavUserMenu = ({ user, logout }) => {
 
           <Link
             to="/orders"
-            className="px-4 py-2.5 text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl flex items-center space-x-3 transition-colors"
+            className="px-4 py-2.5 text-slate-700 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl flex items-center space-x-3 transition-colors"
           >
             <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
               <FiPackage className="h-4 w-4" />

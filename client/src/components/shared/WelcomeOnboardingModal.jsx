@@ -47,7 +47,7 @@ export const WelcomeOnboardingModal = () => {
               onClick={() => setCurrency(item.code)}
               className={`p-3 rounded-2xl border text-center transition-all ${
                 currency === item.code
-                  ? 'border-indigo-600 dark:border-indigo-400 bg-indigo-50/50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-300 shadow-sm font-bold'
+                  ? 'border-slate-900 dark:border-white bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-sm font-bold'
                   : 'border-slate-200 dark:border-white/10 hover:border-slate-300 text-slate-700 dark:text-slate-300'
               }`}
             >
@@ -99,7 +99,7 @@ export const WelcomeOnboardingModal = () => {
 
             <div className="space-y-6">
               <div className="flex items-center justify-between">
-                <div className="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
+                <div className="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-white/10 flex items-center justify-center text-slate-900 dark:text-white">
                   <current.icon className="w-6 h-6" />
                 </div>
                 <div className="flex space-x-1.5">
@@ -107,7 +107,7 @@ export const WelcomeOnboardingModal = () => {
                     <div
                       key={i}
                       className={`h-1.5 rounded-full transition-all duration-300 ${
-                        i === step ? 'w-6 bg-indigo-600 dark:bg-indigo-400' : 'w-1.5 bg-slate-200 dark:bg-slate-700'
+                        i === step ? 'w-6 bg-slate-900 dark:bg-white' : 'w-1.5 bg-slate-200 dark:bg-slate-700'
                       }`}
                     />
                   ))}

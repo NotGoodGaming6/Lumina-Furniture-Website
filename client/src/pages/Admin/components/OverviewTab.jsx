@@ -6,7 +6,7 @@ import { useCurrency } from '@/context/CurrencyContext';
 
 const StatCard = ({ title, value, icon: Icon, trend }) => (
   <div className="glass-card p-6 rounded-3xl border border-slate-200 dark:border-white/10 shadow-sm flex items-center space-x-4 transition-transform hover:-translate-y-1 text-slate-900 dark:text-white">
-    <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
+    <div className="w-14 h-14 rounded-2xl bg-slate-900/10 dark:bg-white/10 flex items-center justify-center text-slate-900 dark:text-white">
       <Icon className="w-7 h-7" />
     </div>
     <div>
@@ -26,7 +26,7 @@ export const OverviewTab = () => {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-64">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-500"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-slate-900 dark:border-white"></div>
       </div>
     );
   }

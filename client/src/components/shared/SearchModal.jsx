@@ -82,7 +82,7 @@ export const SearchModal = ({ isOpen, onClose }) => {
           >
             {/* Header / Input */}
             <div className="relative border-b border-slate-200 dark:border-white/10 shrink-0 flex items-center">
-              <FiSearch className="absolute left-4 sm:left-6 h-5 w-5 sm:h-6 sm:w-6 text-indigo-500 shrink-0 pointer-events-none" />
+              <FiSearch className="absolute left-4 sm:left-6 h-5 w-5 sm:h-6 sm:w-6 text-slate-400 dark:text-slate-500 shrink-0 pointer-events-none" />
               <input
                 ref={inputRef}
                 type="text"
@@ -144,7 +144,7 @@ export const SearchModal = ({ isOpen, onClose }) => {
                             <span className="text-[9px] sm:text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest block">{item.category}</span>
                             <h4 className="text-slate-900 dark:text-white font-bold text-sm sm:text-base truncate">{item.name}</h4>
                           </div>
-                          <div className="flex items-center text-slate-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors shrink-0">
+                          <div className="flex items-center text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors shrink-0">
                             <span className="font-bold mr-2 sm:mr-4 text-slate-900 dark:text-white text-sm sm:text-base">{formatPrice(item.price)}</span>
                             <FiArrowRight className="w-4 h-4" />
                           </div>

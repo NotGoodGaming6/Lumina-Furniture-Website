@@ -97,7 +97,6 @@ class UserService {
       throw new Error('User not found');
     }
 
-    // 1. Delete all user reviews and update affected product ratings
     const userReviews = await Review.find({ user: userId });
     for (const review of userReviews) {
       const productId = review.product;
@@ -105,10 +104,8 @@ class UserService {
       await Review.calcAverageRating(productId);
     }
 
-    // 2. Clean any OTP tokens/sessions
     await Otp.deleteMany({ email: user.email });
 
-    // 3. Delete user document (which automatically deletes cart, addresses, wishlist)
     await User.findByIdAndDelete(userId);
 
     return { success: true, message: 'Account and all associated personal data permanently removed.' };

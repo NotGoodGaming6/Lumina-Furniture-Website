@@ -71,7 +71,7 @@ export const Products = () => {
                 <button
                   disabled={filters.page === 1}
                   onClick={() => updateFilters({ page: filters.page - 1 })}
-                  className="w-12 h-12 rounded-xl flex items-center justify-center bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 shadow-sm text-slate-600 dark:text-slate-300 disabled:opacity-30 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                  className="w-12 h-12 rounded-xl flex items-center justify-center bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 shadow-sm text-slate-600 dark:text-slate-300 disabled:opacity-30 hover:text-slate-950 dark:hover:text-white transition-colors"
                 >
                   <FiChevronLeft className="h-6 w-6 transform rotate-0" />
                 </button>
@@ -80,8 +80,8 @@ export const Products = () => {
                   <button
                     key={i + 1}
                     onClick={() => updateFilters({ page: i + 1 })}
-                    className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold transition-all ${
-                      filters.page === i + 1 ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg' : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                    className={`w-12 h-12 rounded-xl flex items-center justify-center font-mono font-bold transition-all ${
+                      filters.page === i + 1 ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-md' : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
                     }`}
                   >
                     {i + 1}
@@ -91,7 +91,7 @@ export const Products = () => {
                 <button
                   disabled={filters.page === pagination.pages}
                   onClick={() => updateFilters({ page: filters.page + 1 })}
-                  className="w-12 h-12 rounded-xl flex items-center justify-center bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 shadow-sm text-slate-600 dark:text-slate-300 disabled:opacity-30 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                  className="w-12 h-12 rounded-xl flex items-center justify-center bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 shadow-sm text-slate-600 dark:text-slate-300 disabled:opacity-30 hover:text-slate-950 dark:hover:text-white transition-colors"
                 >
                   <FiChevronRight className="h-6 w-6" />
                 </button>

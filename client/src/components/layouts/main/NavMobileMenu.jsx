@@ -73,7 +73,7 @@ export const NavMobileMenu = ({ isOpen, setIsOpen }) => {
                 onClick={() => setIsOpen(false)}
                 className="flex items-center space-x-2 px-3.5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-bold hover:bg-slate-200 transition-colors"
               >
-                <FiUser className="w-4 h-4 text-indigo-500" />
+                <FiUser className="w-4 h-4 text-slate-700 dark:text-slate-300" />
                 <span>Account Profile</span>
               </Link>
             </div>
@@ -86,12 +86,12 @@ export const NavMobileMenu = ({ isOpen, setIsOpen }) => {
                   aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
                   className="relative w-11 h-6 rounded-full p-0.5 bg-slate-200 dark:bg-slate-700 transition-colors duration-300 flex items-center justify-between cursor-pointer focus-visible:outline-none"
                 >
-                  <FiSun className={`h-3 w-3 z-10 ml-0.5 transition-colors ${theme === 'light' ? 'text-amber-500 font-bold' : 'text-slate-400'}`} />
-                  <FiMoon className={`h-3 w-3 z-10 mr-0.5 transition-colors ${theme === 'dark' ? 'text-indigo-300 font-bold' : 'text-slate-400'}`} />
+                  <FiSun className={`h-3 w-3 z-10 ml-0.5 transition-colors ${theme === 'light' ? 'text-amber-600 font-bold' : 'text-slate-400'}`} />
+                  <FiMoon className={`h-3 w-3 z-10 mr-0.5 transition-colors ${theme === 'dark' ? 'text-amber-400 font-bold' : 'text-slate-400'}`} />
                   <motion.div
                     layout
                     transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                    className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white dark:bg-indigo-500 shadow-sm ${
+                    className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white dark:bg-slate-900 shadow-sm ${
                       theme === 'dark' ? 'translate-x-5' : 'translate-x-0'
                     }`}
                   />

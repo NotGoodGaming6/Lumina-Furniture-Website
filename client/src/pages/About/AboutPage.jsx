@@ -58,8 +58,8 @@ export const About = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-sm font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-4">Our Philosophy</h2>
-            <h3 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-8 leading-tight tracking-tight font-display">
+            <h2 className="font-mono text-xs uppercase tracking-[0.25em] text-amber-700 dark:text-amber-500 font-medium mb-4">Our Philosophy</h2>
+            <h3 className="text-4xl md:text-5xl font-serif font-normal text-slate-900 dark:text-white mb-8 leading-tight tracking-tight">
               We believe in removing the unnecessary to celebrate the essential.
             </h3>
             <p className="text-lg text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
@@ -92,17 +92,17 @@ export const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
             <div className="px-6 py-6 md:py-0">
-              <h4 className="text-5xl font-black text-indigo-400 mb-4 font-display">100%</h4>
+              <h4 className="text-5xl font-serif font-light text-amber-500 mb-4">100%</h4>
               <p className="text-xl font-bold mb-2">Sustainable Materials</p>
               <p className="text-slate-400 text-sm">Responsibly sourced and certified.</p>
             </div>
             <div className="px-6 py-6 md:py-0">
-              <h4 className="text-5xl font-black text-indigo-400 mb-4 font-display">Life</h4>
+              <h4 className="text-5xl font-serif font-light text-amber-500 mb-4">Life</h4>
               <p className="text-xl font-bold mb-2">Lifetime Warranty</p>
               <p className="text-slate-400 text-sm">Built to outlast the trends.</p>
             </div>
             <div className="px-6 py-6 md:py-0">
-              <h4 className="text-5xl font-black text-indigo-400 mb-4 font-display">12</h4>
+              <h4 className="text-5xl font-serif font-light text-amber-500 mb-4">12</h4>
               <p className="text-xl font-bold mb-2">Countries Served</p>
               <p className="text-slate-400 text-sm">Global shipping, local care.</p>
             </div>
@@ -113,8 +113,8 @@ export const About = () => {
       <section className="py-32 bg-slate-100 dark:bg-slate-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-sm font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-4">The Atelier</h2>
-            <h3 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight font-display">Meet the visionaries behind Lumina.</h3>
+            <h2 className="font-mono text-xs uppercase tracking-[0.25em] text-amber-700 dark:text-amber-500 font-medium mb-4">The Atelier</h2>
+            <h3 className="text-4xl md:text-5xl font-serif font-normal text-slate-900 dark:text-white tracking-tight">Meet the visionaries behind Lumina.</h3>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -134,10 +134,10 @@ export const About = () => {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
                   />
 
-                  <div className="absolute inset-0 bg-indigo-900/10 group-hover:opacity-0 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-slate-900/10 group-hover:opacity-0 transition-opacity duration-500" />
                 </div>
-                <h4 className="text-xl font-bold text-slate-900 dark:text-white">{member.name}</h4>
-                <p className="text-indigo-600 dark:text-indigo-400 font-medium">{member.role}</p>
+                <h4 className="text-xl font-serif font-bold text-slate-900 dark:text-white">{member.name}</h4>
+                <p className="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 mt-1">{member.role}</p>
               </motion.div>
             ))}
           </div>

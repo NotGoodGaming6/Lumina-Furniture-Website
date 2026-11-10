@@ -36,7 +36,7 @@ export const CookieConsentBanner = () => {
           className="fixed bottom-6 inset-x-4 sm:left-auto sm:right-6 sm:max-w-md z-50 glass bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl p-5 sm:p-6 rounded-3xl border border-slate-200/80 dark:border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.25)] text-slate-900 dark:text-white"
         >
           <div className="flex items-start space-x-3.5">
-            <div className="w-10 h-10 rounded-2xl bg-indigo-50 dark:bg-indigo-950/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 shrink-0 border border-indigo-100 dark:border-indigo-900/50">
+            <div className="w-10 h-10 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-800 dark:text-slate-200 shrink-0 border border-slate-200 dark:border-white/10">
               <FiShield className="w-5 h-5" />
             </div>
             <div className="flex-1 min-w-0">
@@ -47,7 +47,7 @@ export const CookieConsentBanner = () => {
               <div className="mt-2">
                 <Link
                   to="/privacy-policy"
-                  className="text-[11px] font-mono font-bold text-indigo-600 dark:text-indigo-400 hover:underline uppercase tracking-wider"
+                  className="text-[11px] font-mono font-medium text-slate-900 dark:text-white hover:underline uppercase tracking-wider"
                 >
                   Read Privacy Policy →
                 </Link>

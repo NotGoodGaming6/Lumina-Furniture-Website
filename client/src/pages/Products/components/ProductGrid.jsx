@@ -48,11 +48,11 @@ export const ProductGrid = ({ products, loading }) => {
             transition={{ duration: 0.5, delay: index * 0.05 }}
             className="h-full"
           >
-            <TiltCard className="group relative flex flex-col glass-card rounded-3xl overflow-hidden hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 pointer-events-auto h-full">
+            <TiltCard className="group relative flex flex-col glass-card rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 pointer-events-auto h-full">
               <div className="relative aspect-[4/5] overflow-hidden bg-slate-100 dark:bg-slate-900">
                 {product.tag && (
                   <div className="absolute top-4 left-4 z-10">
-                    <span className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-[10px] font-bold uppercase tracking-widest py-1.5 px-3 rounded-full shadow-md">
+                    <span className="bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-[10px] font-mono font-semibold uppercase tracking-widest py-1 px-3 rounded-full shadow-sm">
                       {product.tag}
                     </span>
                   </div>

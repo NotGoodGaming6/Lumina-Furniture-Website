@@ -6,14 +6,14 @@
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-display: "Cormorant Garamond", Georgia, serif;
   --color-brand-50: #fcfbf9;
-  --color-brand-100: #f4f1ea;
-  --color-brand-200: #e2ded4;
-  --color-brand-300: #c5beae;
-  --color-brand-400: #a19782;
-  --color-brand-500: #6366f1;
-  --color-brand-600: #4f46e5;
-  --color-brand-700: #4338ca;
-  --color-brand-800: #3730a3;
+  --color-brand-100: #f5f2eb;
+  --color-brand-200: #e8e3d7;
+  --color-brand-300: #d4ccbd;
+  --color-brand-400: #b5a995;
+  --color-brand-500: #8c7d6b;
+  --color-brand-600: #6b5e4f;
+  --color-brand-700: #4a4136;
+  --color-brand-800: #1e2530;
   --color-brand-900: #0f172a;
 }
 
@@ -97,16 +97,19 @@
     @apply border-b border-slate-200 dark:border-white/10;
   }
   .glass {
-    @apply bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-xl transition-all duration-300;
+    @apply bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200/80 dark:border-white/10 shadow-sm transition-all duration-300;
   }
   .glass-card {
-    @apply bg-white dark:bg-slate-900/80 backdrop-blur-md border border-slate-200 dark:border-white/10 shadow-sm hover:border-slate-400 dark:hover:border-white/30 hover:shadow-lg transition-all duration-500;
+    @apply bg-white dark:bg-slate-900/90 backdrop-blur-md border border-slate-200 dark:border-white/10 shadow-sm hover:border-slate-400 dark:hover:border-white/30 hover:shadow-lg transition-all duration-500;
   }
   .text-gradient {
-    background-image: linear-gradient(to right, #6366f1, #a855f7, #ec4899);
+    background-image: linear-gradient(to right, #0f172a, #475569);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+  .dark .text-gradient {
+    background-image: linear-gradient(to right, #ffffff, #cbd5e1);
   }
   .btn-editorial {
     @apply bg-slate-900 text-white dark:bg-white dark:text-slate-900 font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-slate-800 dark:hover:bg-slate-100 transition-all duration-300 tracking-wide text-sm uppercase;

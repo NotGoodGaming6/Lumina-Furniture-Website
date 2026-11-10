@@ -13,7 +13,7 @@ export const NavDesktopLinks = () => {
   ];
 
   return (
-    <div className="hidden lg:flex items-center space-x-7 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl px-7 py-2.5 rounded-full border border-slate-200/80 dark:border-white/10 shadow-sm">
+    <div className="hidden lg:flex items-center space-x-7 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md px-7 py-2.5 rounded-full border border-slate-200/80 dark:border-white/10 shadow-sm">
       {navLinks.map((link) => {
         const isActive = location.pathname === link.path;
 
@@ -21,14 +21,14 @@ export const NavDesktopLinks = () => {
           <Link
             key={link.path}
             to={link.path}
-            className={`text-sm font-bold transition-colors relative group py-0.5 whitespace-nowrap ${
+            className={`text-sm transition-colors relative group py-0.5 whitespace-nowrap ${
               isActive
-                ? 'text-indigo-600 dark:text-indigo-400 font-extrabold'
-                : 'text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white'
+                ? 'text-slate-900 dark:text-white font-semibold'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white font-normal'
             }`}
           >
             {link.name}
-            <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 transition-all group-hover:w-full ${isActive ? 'w-full' : ''}`}></span>
+            <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-slate-900 dark:bg-white transition-all duration-300 group-hover:w-full ${isActive ? 'w-full' : ''}`}></span>
           </Link>
         );
       })}

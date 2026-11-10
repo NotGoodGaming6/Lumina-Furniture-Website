@@ -132,8 +132,8 @@ export const CouponsTab = () => {
                   <td className="py-4 pl-4 font-mono font-bold text-slate-900 dark:text-white uppercase tracking-wider">
                     {coupon.code}
                   </td>
-                  <td className="py-4 font-mono font-bold text-indigo-600 dark:text-indigo-400">
-                    <span className="bg-indigo-500/10 px-2.5 py-1 rounded-lg border border-indigo-500/20">
+                  <td className="py-4 font-mono font-bold text-amber-700 dark:text-amber-400">
+                    <span className="bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/20">
                       {coupon.discountPercentage}% OFF
                     </span>
                   </td>

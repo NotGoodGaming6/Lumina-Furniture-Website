@@ -48,7 +48,7 @@ export const SupportWidget = () => {
                 className="flex items-center justify-between p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200/60 dark:border-white/5 transition-colors group"
               >
                 <div className="flex items-center space-x-3">
-                  <FiPackage className="w-4 h-4 text-indigo-500" />
+                  <FiPackage className="w-4 h-4 text-amber-600 dark:text-amber-400" />
                   <span className="text-xs font-medium">Track Active Order</span>
                 </div>
                 <FiArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:translate-x-1 transition-transform" />

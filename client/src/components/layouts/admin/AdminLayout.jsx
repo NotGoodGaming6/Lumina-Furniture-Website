@@ -37,7 +37,7 @@ export const AdminLayout = ({ children, activeTab, setActiveTab }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex text-slate-900 dark:text-slate-100 transition-colors duration-300 selection:bg-indigo-500 selection:text-white">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex text-slate-900 dark:text-slate-100 transition-colors duration-300 selection:bg-slate-900 selection:text-white dark:selection:bg-white dark:selection:text-slate-900">
       {sidebarOpen && (
         <div
           className="fixed inset-0 bg-slate-950/60 backdrop-blur-md z-40 lg:hidden"
@@ -139,12 +139,12 @@ export const AdminLayout = ({ children, activeTab, setActiveTab }) => {
                 aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
                 className="relative w-12 h-6 rounded-full p-0.5 bg-slate-200/80 dark:bg-slate-800/80 transition-colors duration-300 flex items-center justify-between cursor-pointer focus-visible:outline-none"
               >
-                <FiSun className={`h-3 w-3 z-10 ml-0.5 transition-colors ${theme === 'light' ? 'text-amber-500 font-bold' : 'text-slate-400'}`} />
-                <FiMoon className={`h-3 w-3 z-10 mr-0.5 transition-colors ${theme === 'dark' ? 'text-indigo-300 font-bold' : 'text-slate-400'}`} />
+                <FiSun className={`h-3 w-3 z-10 ml-0.5 transition-colors ${theme === 'light' ? 'text-amber-600 font-bold' : 'text-slate-400'}`} />
+                <FiMoon className={`h-3 w-3 z-10 mr-0.5 transition-colors ${theme === 'dark' ? 'text-amber-400 font-bold' : 'text-slate-400'}`} />
                 <motion.div
                   layout
                   transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                  className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white dark:bg-indigo-600 shadow-sm ${
+                  className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white dark:bg-slate-900 shadow-sm ${
                     theme === 'dark' ? 'translate-x-6' : 'translate-x-0'
                   }`}
                 />

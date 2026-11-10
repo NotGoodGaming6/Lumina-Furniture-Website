@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FiArrowRight, FiStar } from 'react-icons/fi';
+import { FiArrowRight } from 'react-icons/fi';
 
 import heroBanner from '@/assets/hero_banner.png';
 
